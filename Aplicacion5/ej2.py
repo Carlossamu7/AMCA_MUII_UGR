@@ -10,8 +10,9 @@ import numpy as np
 def CRS_to_SparseMatrix(AA, JA, IA):
     # Dimensiones de la matriz
     n = len(IA)-1
+    m = np.max(JA)
     # Matriz de ceros con dicha dimensión
-    matrix = np.zeros((n,n))
+    matrix = np.zeros((n,m))
     # Inicializo el contador
     cont = 0
 
@@ -28,14 +29,14 @@ def CRS_to_SparseMatrix(AA, JA, IA):
     return matrix
 
 # Creo las listas
-AA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-JA = [1, 4, 1, 2, 4, 1, 3, 4, 5, 3, 4, 5]
-IA = [1, 3, 6, 10, 12, 13]
+#AA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+#JA = [1, 4, 1, 2, 4, 1, 3, 4, 5, 3, 4, 5]
+#IA = [1, 3, 6, 10, 12, 13]
 
 # Creo las listas
-#AA = [8, 4, 1, 3, 2, 1, 7, 9, 3, 1, 5]
-#JA = [1, 2, 3, 4, 1, 3, 5, 2, 3, 6, 6]
-#IA = [1, 3, 5, 8,11,12]
+AA = [8, 4, 1, 3, 2, 1, 7, 9, 3, 1, 5]
+JA = [1, 2, 3, 4, 1, 3, 5, 2, 3, 6, 6]
+IA = [1, 3, 5, 8,11,12]
 
 sparse_matrix = CRS_to_SparseMatrix(AA, JA, IA)
 print(sparse_matrix)

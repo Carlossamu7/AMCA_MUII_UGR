@@ -60,6 +60,7 @@ def print_sol(x_ant, x_new, title, norm=0):
 
 """ Ejercicio 5 """
 
+print("Ejercicio 5")
 A = np.array([[4, -1, 1],
               [-1, 3, -2],
               [1, -2, 3]])
@@ -99,9 +100,13 @@ tres_iters_normalizado(B, x)
 
 """ Ejercicio 7 """
 
-A = [[2, 0, 3],
-     [0, 1, 0],
-     [-1, 0, -2]]
+A = np.array([[2, 0, 3],
+              [0, 1, 0],
+              [-1, 0, -2]])
 
-metodo_potencias(A, x, 10)
-metodo_potencias_normalizado(A, x, 10)
+print("\nEjercicio 7")
+(x_new, x_ant) = metodo_potencias(A, x, 10)
+print_sol(x_ant, x_new, "Método de las potencias")
+print(x_new)
+(x_new, _) = metodo_potencias_normalizado(A, x, 10)
+print(x_new)
